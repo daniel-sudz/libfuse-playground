@@ -1,0 +1,9 @@
+#!/bin/bash -ex
+
+
+mkdir -p /env/
+echo "export DEBIAN_FRONTEND=noninteractive" > /env/libfuse-implementation
+source /env/libfuse-implementation
+
+apt-get update -y
+apt-get install -y fuse libfuse-dev g++ pkg-config curl

@@ -1,0 +1,8 @@
+#!/bin/bash -ex
+
+source /env/libfuse-implementation
+
+# run sample test
+mkdir -p /src/mount
+/src/libfuse-implementation/main --name="testfile" /src/mount
+ls /src/mount

@@ -1,0 +1,6 @@
+#!/bin/bash -ex
+
+docker build --progress=plain -f docker/libfuse-implementation.Dockerfile -t libfuse-implementation .
+
+docker rm "/libfuse-implementation-compile" || true
+docker run --privileged --name libfuse-implementation-compile libfuse-implementation:latest /src/docker/run-implementation
